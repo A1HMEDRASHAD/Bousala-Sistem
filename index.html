@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>غرفة العمليات | شبكة البوصلة</title>
-  <!-- خطوط جوجل وأيقونات أندرويد القياسية (Material Symbols Rounded) -->
+  
+  <!-- أيقونة محركات البحث والمتصفح (Favicon) القابلة للتغيير ديناميكياً -->
+  <link id="dynamic-favicon" rel="icon" type="image/jpeg" href="https://i.ibb.co/WWSTnMgd/image.jpg">
+  <link id="apple-favicon" rel="apple-touch-icon" href="https://i.ibb.co/WWSTnMgd/image.jpg">
+
+  <!-- خطوط جوجل وأيقونات أندرويد القياسية (One UI Material Symbols) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -13,7 +18,7 @@
 </head>
 <body>
 
-  <!-- خلفية الإضاءة المحيطية بأسلوب One UI -->
+  <!-- خلفية الإضاءة المحيطية بأسلوب One UI 9 -->
   <div class="ambient-bg">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -22,11 +27,11 @@
   <!-- شاشة تسجيل الدخول المعزولة -->
   <section id="login-screen" class="login-screen">
     <div class="glass-card login-box">
-      <div class="brand-badge">
-        <span class="material-symbols-rounded">explore</span>
+      <div class="login-logo-wrap">
+        <img id="login-logo-img" src="https://i.ibb.co/BHHHLttP/image.png" alt="شعار البوصلة" class="brand-logo-horizontal">
       </div>
-      <h1 id="login-site-title">غرفة العمليات</h1>
-      <p class="subtitle">بوابة الإدارة والتحرير المشفرة — الدخول للمصرح لهم فقط</p>
+      <h1 id="login-site-title">غرفة العمليات المركزية</h1>
+      <p class="subtitle">بوابة القيادة والتحرير المشفرة — الدخول للمصرح لهم فقط</p>
       
       <button id="google-login-btn" class="btn-primary btn-google">
         <span class="material-symbols-rounded">login</span>
@@ -41,18 +46,18 @@
     </div>
   </section>
 
-  <!-- لوحة التحكم الرئيسية (تظهر بعد التحقق من الصلاحية) -->
+  <!-- لوحة التحكم الرئيسية -->
   <div id="app-shell" class="app-shell hidden">
     
-    <!-- الترويسة العلوية بأسلوب One UI -->
+    <!-- الترويسة العلوية الزجاجية مع الشعار الأفقي الحر -->
     <header class="top-header glass-bar">
       <div class="header-right">
-        <div class="app-icon">
-          <span class="material-symbols-rounded">explore</span>
-        </div>
-        <div>
-          <h2 id="header-network-name">شبكة البوصلة</h2>
-          <div class="user-role-pill" id="user-role-badge">مدير سيادي</div>
+        <img id="header-logo-img" src="https://i.ibb.co/BHHHLttP/image.png" alt="شعار الموقع" class="header-logo-horizontal">
+        <div class="header-titles">
+          <div id="header-text-wrap">
+            <h2 id="header-network-name">بوصلة السياسة اليمنية</h2>
+          </div>
+          <div class="user-role-pill" id="user-role-badge">قيادة سيادية</div>
         </div>
       </div>
       <div class="header-left">
@@ -72,10 +77,9 @@
       <section id="tab-posts" class="tab-view active">
         <div class="oneui-hero-title">
           <h1>إدارة المنشورات</h1>
-          <p>تحكم كامل بالأخبار، التعديل، التقييد، أو الحذف النهائي</p>
+          <p>تحكم كامل بالأخبار، التعديل، التقييد، النسخ الذكي، أو الحذف النهائي</p>
         </div>
 
-        <!-- إحصائيات سريعة -->
         <div class="stats-grid">
           <div class="glass-card stat-card">
             <span class="stat-num" id="stat-total">0</span>
@@ -91,7 +95,6 @@
           </div>
         </div>
 
-        <!-- شريط البحث والفلترة -->
         <div class="glass-card filter-bar">
           <div class="search-input-wrap">
             <span class="material-symbols-rounded">search</span>
@@ -105,9 +108,8 @@
           </div>
         </div>
 
-        <!-- قائمة المقالات -->
         <div id="posts-list" class="posts-list">
-          <div class="loading-state">جاري جلب المنشورات من قاعدة البيانات...</div>
+          <div class="glass-card" style="text-align:center;">جاري الاتصال بقاعدة البيانات...</div>
         </div>
       </section>
 
@@ -157,10 +159,9 @@
             </div>
           </div>
 
-          <!-- رفع وضغط الصورة عبر ImgBB -->
           <div class="form-group">
-            <label>الصورة البارزة (تُضغط وتُرفع تلقائياً)</label>
-            <div class="image-upload-box" id="image-drop-zone">
+            <label>الصورة البارزة للمقال (تُضغط وتُرفع تلقائياً)</label>
+            <div class="image-upload-box">
               <input type="file" id="post-image-file" accept="image/*" class="hidden-file-input">
               <div class="upload-actions">
                 <button type="button" id="trigger-upload-btn" class="btn-secondary">
@@ -176,7 +177,6 @@
             </div>
           </div>
 
-          <!-- شريط أدوات تنسيق سريع للمتن -->
           <div class="form-group">
             <label>متن الخبر / التحليل *</label>
             <div class="editor-toolbar">
@@ -193,7 +193,6 @@
             <input type="text" id="post-tags" placeholder="اليمن, تحليلات_سياسية, تقنية, شبكة_البوصلة">
           </div>
 
-          <!-- خيارات التمييز -->
           <div class="toggles-row">
             <label class="oneui-switch">
               <input type="checkbox" id="post-is-breaking">
@@ -222,7 +221,97 @@
         </form>
       </section>
 
-      <!-- 3. تبويب إدارة الأقسام والتصنيفات -->
+      <!-- 3. تبويب الرعايات والإعلانات الممولة (جديد كلياً) -->
+      <section id="tab-ads" class="tab-view super-only">
+        <div class="oneui-hero-title">
+          <h1>الرعايات والإعلانات الممولة</h1>
+          <p>أضف إعلانات الشركات والبنوك وراقب عدد مرات الظهور والنقرات الحية بدقة</p>
+        </div>
+
+        <!-- إحصائيات الإعلانات -->
+        <div class="stats-grid">
+          <div class="glass-card stat-card">
+            <span class="stat-num" id="stat-ads-active">0</span>
+            <span class="stat-label">إعلانات نشطة</span>
+          </div>
+          <div class="glass-card stat-card">
+            <span class="stat-num" id="stat-ads-views">0</span>
+            <span class="stat-label">إجمالي مرات الظهور</span>
+          </div>
+          <div class="glass-card stat-card">
+            <span class="stat-num" id="stat-ads-clicks">0</span>
+            <span class="stat-label">إجمالي النقرات</span>
+          </div>
+        </div>
+
+        <form id="ad-form" class="glass-card form-container">
+          <input type="hidden" id="ad-id" value="">
+          <h3 id="ad-form-heading">إضافة حملة إعلانية / رعاية جديدة</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>اسم الجهة المعلنة / الراعي الرسمي *</label>
+              <input type="text" id="ad-sponsor" required placeholder="مثال: بنك الكريمي / شركة اتصالات">
+            </div>
+            <div class="form-group">
+              <label>العنوان أو النص الجذاب للإعلان *</label>
+              <input type="text" id="ad-title" required placeholder="مثال: افتح حسابك الآن بخطوات رقمية سريعة">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>رابط موقع المعلن (عند نقر الزائر) *</label>
+              <input type="url" id="ad-target-url" required placeholder="https://...">
+            </div>
+            <div class="form-group">
+              <label>موضع ظهور الشريط الزجاجي في الموقع *</label>
+              <select id="ad-placement" required>
+                <option value="all">في جميع المواضع (أعلى الرئيسية + بين الأخبار + وسط المقال)</option>
+                <option value="top">أعلى الصفحة الرئيسية فقط</option>
+                <option value="between_posts">بين بطاقات الأخبار في الرئيسية فقط</option>
+                <option value="in_article">في وسط المقالات والتحليلات فقط</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>صورة أو شعار الإعلان (يرفع عبر ImgBB أو رابط مباشر)</label>
+            <div class="image-upload-box">
+              <input type="file" id="ad-image-file" accept="image/*" class="hidden-file-input">
+              <div class="upload-actions">
+                <button type="button" id="trigger-ad-upload-btn" class="btn-secondary">
+                  <span class="material-symbols-rounded">add_photo_alternate</span>
+                  <span>رفع صورة الإعلان</span>
+                </button>
+                <span id="ad-upload-status" class="status-hint">يفضل صورة مربعة أو أفقية واضحة</span>
+              </div>
+              <input type="url" id="ad-image-url" placeholder="أو الصق رابط صورة الإعلان هنا...">
+              <div id="ad-preview-wrap" class="image-preview-wrap hidden">
+                <img id="ad-image-preview" src="" alt="معاينة الإعلان">
+              </div>
+            </div>
+          </div>
+
+          <label class="oneui-switch">
+            <input type="checkbox" id="ad-active" checked>
+            <span class="slider"></span>
+            <span class="switch-label">تفعيل عرض هذا الإعلان فوراً على الموقع العام</span>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">
+              <span class="material-symbols-rounded">campaign</span>
+              <span>حفظ ونشر الإعلان</span>
+            </button>
+            <button type="button" id="cancel-ad-edit-btn" class="btn-ghost hidden">إلغاء التعديل</button>
+          </div>
+        </form>
+
+        <div id="ads-list" class="posts-list"></div>
+      </section>
+
+      <!-- 4. تبويب إدارة الأقسام والتصنيفات -->
       <section id="tab-categories" class="tab-view super-only">
         <div class="oneui-hero-title">
           <h1>هندسة الأقسام</h1>
@@ -233,7 +322,7 @@
           <div class="seed-banner">
             <div>
               <strong>بداية سريعة؟</strong>
-              <p>اضغط لتوليد الأقسام القياسية (السياسة، كواليس وتحليلات، التقنية، الثقافة والفن، محلي ودولي) بضغطة واحدة.</p>
+              <p>اضغط لتوليد الأقسام القياسية (السياسة اليمنية، كواليس وتحليلات، نافذة التقنية، الثقافة والفن، إقليمي ودولي) بضغطة واحدة.</p>
             </div>
             <button type="button" id="seed-categories-btn" class="btn-secondary">
               <span class="material-symbols-rounded">auto_awesome</span>
@@ -257,7 +346,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label>اسم أيقونة Material (اختياري)</label>
-                <input type="text" id="cat-icon" placeholder="memory أو public أو theater_comedy">
+                <input type="text" id="cat-icon" placeholder="memory أو public أو balance">
               </div>
               <div class="form-group">
                 <label>الأقسام الفرعية (افصل بينها بفاصلة)</label>
@@ -274,14 +363,13 @@
         <div id="categories-list" class="items-grid"></div>
       </section>
 
-      <!-- 4. تبويب فريق التحرير والصلاحيات -->
+      <!-- 5. تبويب فريق التحرير والصلاحيات -->
       <section id="tab-staff" class="tab-view super-only">
         <div class="oneui-hero-title">
           <h1>فريق التحرير والسيادة</h1>
           <p>إدارة المحررين وتحديد الأقسام المسموح لهم بالنشر فيها</p>
         </div>
 
-        <!-- بطاقة السيادة المطلقة (غير قابلة للمساس) -->
         <div class="glass-card sovereign-card">
           <div class="sovereign-header">
             <span class="material-symbols-rounded">shield_locked</span>
@@ -296,7 +384,6 @@
           </div>
         </div>
 
-        <!-- إضافة محرر جديد -->
         <form id="staff-form" class="glass-card form-container">
           <h3>إضافة أو تعديل صلاحية عضو في الفريق</h3>
           <div class="form-row">
@@ -320,7 +407,7 @@
             </div>
             <div class="form-group">
               <label>الأقسام المسموح له بالنشر فيها (اتركها فارغة لفتح كل الأقسام)</label>
-              <input type="text" id="staff-categories" placeholder="مثال: tech, culture (اكتب معرف القسم أو الكل)">
+              <input type="text" id="staff-categories" placeholder="مثال: tech, culture">
             </div>
           </div>
 
@@ -333,16 +420,16 @@
         <div id="staff-list" class="items-grid"></div>
       </section>
 
-      <!-- 5. تبويب الهوية والإعدادات الشاملة -->
+      <!-- 6. تبويب الهوية والإعدادات الشاملة -->
       <section id="tab-settings" class="tab-view super-only">
         <div class="oneui-hero-title">
           <h1>الهوية والإعدادات المركزية</h1>
-          <p>تغيير هوية الموقع بضغطة زر، إعدادات الإعلانات الزجاجية، ومفاتيح النشر التلقائي</p>
+          <p>تغيير الشعار الأفقي، أيقونة محركات البحث، وهوية الموقع بالكامل بضغطة زر</p>
         </div>
 
         <form id="settings-form" class="glass-card form-container">
           
-          <h3 class="section-subtitle">1. هوية الموقع المرنة (White-Label Identity)</h3>
+          <h3 class="section-subtitle">1. الهوية البصرية والشعارات المرنة</h3>
           <div class="form-row">
             <div class="form-group">
               <label>اسم الموقع الحالي *</label>
@@ -356,6 +443,35 @@
 
           <div class="form-row">
             <div class="form-group">
+              <label>رابط الشعار الأفقي الرسمي (Header & Footer Logo)</label>
+              <div class="inline-upload-field">
+                <input type="url" id="set-logo-url" placeholder="https://i.ibb.co/BHHHLttP/image.png">
+                <input type="file" id="logo-file-picker" accept="image/*" class="hidden-file-input">
+                <button type="button" id="upload-logo-btn" class="btn-secondary small-btn" title="رفع شعار جديد">
+                  <span class="material-symbols-rounded">upload</span>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>رابط أيقونة محركات البحث والمتصفح (Favicon URL)</label>
+              <div class="inline-upload-field">
+                <input type="url" id="set-favicon-url" placeholder="https://i.ibb.co/WWSTnMgd/image.jpg">
+                <input type="file" id="favicon-file-picker" accept="image/*" class="hidden-file-input">
+                <button type="button" id="upload-favicon-btn" class="btn-secondary small-btn" title="رفع أيقونة جديدة">
+                  <span class="material-symbols-rounded">upload</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <label class="oneui-switch">
+            <input type="checkbox" id="set-hide-text-logo" checked>
+            <span class="slider"></span>
+            <span class="switch-label">إخفاء النص المكتوب بجانب الشعار في الموقع العام (لأن الشعار الأفقي يحتوي على الاسم)</span>
+          </label>
+
+          <div class="form-row" style="margin-top:10px;">
+            <div class="form-group">
               <label>وصف الموقع (لمحركات البحث Google News)</label>
               <input type="text" id="set-site-desc" placeholder="منصة إخبارية تحليلية ترصد كواليس السياسة والتقنية والثقافة">
             </div>
@@ -367,10 +483,6 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label>رابط الشعار (Logo URL)</label>
-              <input type="url" id="set-logo-url" placeholder="https://...">
-            </div>
-            <div class="form-group">
               <label>اللون الأساسي للهوية (Accent Color)</label>
               <input type="color" id="set-accent-color" value="#3b82f6" class="color-picker">
             </div>
@@ -378,16 +490,16 @@
 
           <hr class="divider">
 
-          <h3 class="section-subtitle">2. نظام الإعلانات الزجاجي الخفيف</h3>
+          <h3 class="section-subtitle">2. إعدادات AdSense واللافتة الاحتياطية</h3>
           <label class="oneui-switch">
             <input type="checkbox" id="set-ads-enabled">
             <span class="slider"></span>
-            <span class="switch-label">تفعيل شريط الإعلانات الزجاجي في الموقع العام</span>
+            <span class="switch-label">تفعيل الإعلان الاحتياطي العام (في حال عدم وجود رعاية في قسم الإعلانات)</span>
           </label>
 
           <div class="form-row" style="margin-top:14px;">
             <div class="form-group">
-              <label>معرف ناشر جوجل (AdSense / AdMob Publisher ID)</label>
+              <label>معرف ناشر جوجل (AdSense Publisher ID)</label>
               <input type="text" id="set-adsense-id" placeholder="ca-pub-XXXXXXXXXXXXXXXX">
             </div>
             <div class="form-group">
@@ -397,18 +509,18 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label>أو نص/عنوان إعلان مخصص مباشر</label>
-              <input type="text" id="set-custom-ad-text" placeholder="مساحة إعلانية أو رعاية خاصة...">
+              <label>نص إعلان احتياطي سريع</label>
+              <input type="text" id="set-custom-ad-text" placeholder="للاعلان والرعاية على شبكة البوصلة تواصل معنا...">
             </div>
             <div class="form-group">
-              <label>رابط الإعلان المخصص عند النقر</label>
+              <label>رابط الإعلان الاحتياطي</label>
               <input type="url" id="set-custom-ad-link" placeholder="https://...">
             </div>
           </div>
 
           <hr class="divider">
 
-          <h3 class="section-subtitle">3. روابط منصات التواصل (تُرفق في النسخ الذكي)</h3>
+          <h3 class="section-subtitle">3. روابط منصات التواصل (تُرفق في النسخ الذكي والفوتر)</h3>
           <div class="form-row">
             <div class="form-group">
               <label>رابط قناة واتساب</label>
@@ -433,9 +545,6 @@
           <hr class="divider">
 
           <h3 class="section-subtitle">4. بوابة النشر التلقائي المستقبلي (API Keys & Toggles)</h3>
-          <p class="status-hint" style="margin-bottom:14px;">كل منصة لها مفتاح تشغيل مستقل. اتركها مغلقة حالياً، ومتى ما أضفت المفاتيح وفعلت الزر سيعمل النشر التلقائي.</p>
-
-          <!-- تيليجرام -->
           <div class="api-platform-box">
             <label class="oneui-switch">
               <input type="checkbox" id="set-auto-tg-enabled">
@@ -448,7 +557,6 @@
             </div>
           </div>
 
-          <!-- فيسبوك -->
           <div class="api-platform-box">
             <label class="oneui-switch">
               <input type="checkbox" id="set-auto-fb-enabled">
@@ -461,7 +569,6 @@
             </div>
           </div>
 
-          <!-- إكس (تويتر) -->
           <div class="api-platform-box">
             <label class="oneui-switch">
               <input type="checkbox" id="set-auto-x-enabled">
@@ -483,6 +590,12 @@
 
     </main>
 
+    <!-- تذييل غرفة العمليات بالشعار المصغر الأنيق -->
+    <footer class="admin-footer glass-bar">
+      <img id="admin-footer-logo" src="https://i.ibb.co/BHHHLttP/image.png" alt="الشعار" class="footer-logo-small">
+      <span id="admin-footer-name">غرفة العمليات المركزية — شبكة البوصلة</span>
+    </footer>
+
     <!-- شريط التنقل السفلي الزجاجي بأسلوب سامسونج One UI -->
     <nav class="bottom-nav glass-bar">
       <button class="nav-item active" data-target="tab-posts">
@@ -491,7 +604,11 @@
       </button>
       <button class="nav-item" data-target="tab-editor">
         <span class="material-symbols-rounded">add_box</span>
-        <span class="nav-label">نشر جديد</span>
+        <span class="nav-label">نشر</span>
+      </button>
+      <button class="nav-item super-only" data-target="tab-ads">
+        <span class="material-symbols-rounded">campaign</span>
+        <span class="nav-label">الإعلانات</span>
       </button>
       <button class="nav-item super-only" data-target="tab-categories">
         <span class="material-symbols-rounded">category</span>
