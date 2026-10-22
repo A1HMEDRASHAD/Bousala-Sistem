@@ -1,7 +1,7 @@
 :root {
-  --bg-deep: #080b11;
-  --bg-surface: rgba(20, 26, 38, 0.72);
-  --bg-surface-hover: rgba(30, 39, 56, 0.85);
+  --bg-deep: #070a10;
+  --bg-surface: rgba(19, 25, 38, 0.76);
+  --bg-surface-hover: rgba(30, 39, 56, 0.88);
   --glass-border: rgba(255, 255, 255, 0.09);
   --text-main: #f3f6fc;
   --text-muted: #94a3b8;
@@ -48,7 +48,7 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(95px);
-  opacity: 0.28;
+  opacity: 0.25;
 }
 
 .orb-1 {
@@ -62,7 +62,7 @@ body {
 .orb-2 {
   width: 320px;
   height: 320px;
-  background: #6366f1;
+  background: #dc2626;
   bottom: -80px;
   left: -80px;
 }
@@ -79,10 +79,46 @@ body {
 }
 
 .glass-bar {
-  background: rgba(13, 18, 28, 0.82);
+  background: rgba(11, 15, 25, 0.86);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-color: var(--glass-border);
+}
+
+/* =========================================
+   تنسيقات الشعار الأفقي الحر (بدون ضغط مربع)
+   ========================================= */
+.login-logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.brand-logo-horizontal {
+  max-height: 76px;
+  max-width: 260px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.header-logo-horizontal {
+  max-height: 46px;
+  max-width: 190px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.footer-logo-small {
+  max-height: 32px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
 }
 
 /* شاشة تسجيل الدخول */
@@ -95,39 +131,22 @@ body {
 }
 
 .login-box {
-  max-width: 420px;
+  max-width: 430px;
   width: 100%;
   text-align: center;
   padding: 36px 26px;
 }
 
-.brand-badge {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 18px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, var(--accent), #1d4ed8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 25px var(--accent-glow);
-}
-
-.brand-badge .material-symbols-rounded {
-  font-size: 38px;
-  color: #fff;
-}
-
 .login-box h1 {
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   font-weight: 800;
   margin-bottom: 8px;
 }
 
 .subtitle {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 26px;
+  font-size: 0.92rem;
+  margin-bottom: 24px;
 }
 
 .security-note {
@@ -157,34 +176,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 20px;
+  padding: 12px 20px;
   border-bottom: 1px solid var(--glass-border);
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.app-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), #2563eb);
+.header-titles {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .top-header h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
 }
 
 .user-role-pill {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   padding: 2px 10px;
   border-radius: 99px;
   background: rgba(59, 130, 246, 0.18);
@@ -225,7 +242,7 @@ body {
 .main-workspace {
   max-width: 960px;
   margin: 0 auto;
-  padding: 20px 16px 110px;
+  padding: 20px 16px 40px;
 }
 
 .tab-view {
@@ -243,18 +260,18 @@ body {
 }
 
 .oneui-hero-title {
-  padding: 26px 8px 22px;
+  padding: 22px 8px 20px;
 }
 
 .oneui-hero-title h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 900;
   letter-spacing: -0.5px;
 }
 
 .oneui-hero-title p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   margin-top: 4px;
 }
 
@@ -273,7 +290,7 @@ body {
 
 .stat-num {
   display: block;
-  font-size: 1.7rem;
+  font-size: 1.65rem;
   font-weight: 900;
   color: var(--accent);
 }
@@ -337,7 +354,7 @@ body {
   border-color: transparent;
 }
 
-/* بطاقات المنشورات في غرفة العمليات */
+/* بطاقات المنشورات والإعلانات في غرفة العمليات */
 .posts-list {
   display: flex;
   flex-direction: column;
@@ -398,6 +415,29 @@ body {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
+/* عدادات الإعلانات الحية (Views & Clicks) */
+.ad-metrics-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.metric-pill.views { color: #93c5fd; }
+.metric-pill.clicks { color: #6ee7b7; }
+.metric-pill.ctr { color: #fcd34d; }
 
 .post-actions-bar {
   display: flex;
@@ -474,6 +514,17 @@ body {
   color: #cbd5e1;
 }
 
+.inline-upload-field {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.small-btn {
+  padding: 12px 14px !important;
+  flex-shrink: 0;
+}
+
 input[type="text"],
 input[type="url"],
 input[type="email"],
@@ -540,10 +591,10 @@ input:focus, select:focus, textarea:focus {
 }
 
 .image-preview-wrap img {
-  max-height: 200px;
+  max-height: 190px;
   border-radius: var(--radius-md);
   margin-top: 8px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* أزرار التبديل بأسلوب One UI */
@@ -711,21 +762,37 @@ input:focus, select:focus, textarea:focus {
   cursor: pointer;
 }
 
-/* شريط التنقل السفلي */
+/* تذييل غرفة العمليات */
+.admin-footer {
+  max-width: 960px;
+  margin: 20px auto 110px;
+  padding: 16px 22px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+/* شريط التنقل السفلي العائم (6 تبويبات) */
 .bottom-nav {
   position: fixed;
-  bottom: 14px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 28px);
-  max-width: 560px;
+  width: calc(100% - 20px);
+  max-width: 640px;
   border-radius: 28px;
   border: 1px solid var(--glass-border);
   display: flex;
   justify-content: space-around;
-  padding: 8px 6px;
+  padding: 6px 4px;
   z-index: 90;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
 }
 
 .nav-item {
@@ -735,22 +802,24 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  padding: 8px 12px;
-  border-radius: 20px;
+  gap: 2px;
+  padding: 7px 8px;
+  border-radius: 18px;
   font-family: inherit;
   cursor: pointer;
   transition: 0.2s;
+  flex: 1;
 }
 
 .nav-item.active {
   color: #fff;
-  background: rgba(59, 130, 246, 0.22);
+  background: rgba(59, 130, 246, 0.24);
 }
 
 .nav-label {
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 /* الإشعار العائم (Toast) */
@@ -767,4 +836,6 @@ input:focus, select:focus, textarea:focus {
   font-size: 0.9rem;
   z-index: 200;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-width: 90%;
 }
